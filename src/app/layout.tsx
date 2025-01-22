@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -27,7 +28,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="">
+          <header className="backdrop-blur-md flex sticky top-0 justify-center"><div className="flex gap-10 h-[70px] items-center border-b-2">
+            {/* <a href="/">home</a> */}
+            <Link href="/"><li className="hover:scale-105 list-none text-[18px]">Home</li></Link>
+            {/* <a href="/about">about</a> */}
+            <Link href="/about"><li className="hover:scale-105 list-none text-[18px]">About</li></Link>
+          {/* <a href="/project">project</a> */}
+          <Link href="/project"><li className="hover:scale-105 list-none text-[18px]">Project</li></Link>
+            {/* <a href="/blog">blog</a> */}
+            <Link href="/blog"><li className="hover:scale-105 list-none text-[18px]">Blog</li></Link>
+            <button className="border-[1px] border-black p-1 px-3 rounded-lg">Login</button>
+        </div></header>
         {children}
+        {/* <footer className="flex justify-center mb-5 mt-auto">Footer</footer> */}
+        </div>
       </body>
     </html>
   );
